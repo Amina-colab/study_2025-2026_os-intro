@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru-RU" xml:lang="ru-RU">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Юсупова Амина Руслановна" />
+  <title>Операционные системы</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Операционные системы</h1>
+<p class="subtitle">Тема доклада - “Понятие процесса, виды процессов и
+его состояния в операционных системах”</p>
+<p class="author">Юсупова Амина Руслановна</p>
+<p class="date">06 марта 2026</p>
+</header>
+<h1 id="информация-о-докладчике">Информация о докладчике</h1>
+<h2 id="докладчик">Докладчик</h2>
+<div class="columns" data-align="center">
+<div class="column" style="width:70%;">
+<ul>
+<li>Юсупова Амина Руслановна</li>
+<li>студентка НКАбд-06-25</li>
+<li>Российский университет дружбы народов</li>
+<li><a href="mailto:1032253525@rudn.ru">1032253525@rudn.ru</a></li>
+<li><a href="https://github.com/Amina-colab"
+class="uri">https://github.com/Amina-colab</a></li>
+</ul>
+</div><div class="column" style="width:30%;">
+
+</div>
+</div>
+<h1 id="цели-и-задачи-работы">Цели и задачи работы</h1>
+<h2 id="цель-работы">Цель работы</h2>
+<p>Целью данной работы является объяснение понятия процесса как одно из
+ключевых понятий операционных систем</p>
+<h2 id="задачи">Задачи:</h2>
+<ol type="1">
+<li>Дать определение процессу и объяснить, чем он отличается от
+программы.</li>
+<li>Перечислить и кратко охарактеризовать основные виды процессов</li>
+<li>Описать состояния процесса и их смену.</li>
+</ol>
+<h1 id="гипотеза-и-ход-работы">Гипотеза и ход работы:</h1>
+<h2 id="гипотеза">Гипотеза</h2>
+<p>Вероятно, глубокое понимание концепции процесса, его классификации и
+особенно модели состояний является необходимым условием для понимания
+принципов функционирования операционной системы в целом.</p>
+<h2 id="ход-работы">Ход работы:</h2>
+<ol type="1">
+<li>Поиск и анализ теоретического материала</li>
+<li>Структурирование информации и выделение ключевых разделов</li>
+<li>Углубленное изучение темы программных потоков</li>
+<li>Подготовка текста доклада и презентации</li>
+</ol>
+<h1 id="что-такое-процесс">Что такое процесс?</h1>
+<p><strong>Процесс</strong> — это фундаментальное понятие ОС, включающее
+два аспекта: носитель данных (владеет ресурсами и памятью),исполнитель
+операций (выполняет код).</p>
+<ul>
+<li>Главное отличие от программы:</li>
+</ul>
+<p>Программа — пассивный объект (файл на диске).</p>
+<p>Процесс — активный объект (выполняющийся экземпляр программы).</p>
+<figure>
+<img src="процесс.jpg" alt="Фото1" />
+<figcaption aria-hidden="true">Фото1</figcaption>
+</figure>
+<h1 id="состояния-процесса-жизненный-цикл">Состояния процесса (Жизненный
+цикл)</h1>
+<p><strong>Процесс в ходе исполнения проходит несколько
+состояний</strong></p>
+<ul>
+<li><p>Порождение (Создание): Подготовка к первому запуску.</p></li>
+<li><p>Активное (Счет): Программа напрямую исполняется
+процессором.</p></li>
+<li><p>Ожидание: Процесс остановлен, так как ждет ресурс (например,
+данные с диска).</p></li>
+<li><p>Готовность: У процесса есть все ресурсы, кроме одного — самого
+процессора (ждет очереди).</p></li>
+<li><p>Окончание: Завершение работы (нормальное или аварийное).</p></li>
+</ul>
+<figure>
+<img src="фото2.png" alt="жизненный цикл" />
+<figcaption aria-hidden="true">жизненный цикл</figcaption>
+</figure>
+<h1 id="роль-ос-в-управлении-процессами">Роль ОС в управлении
+процессами</h1>
+<p>Задачи операционной системы</p>
+<p>Для ОС процесс — это объект управления.</p>
+<p>Главная задача ОС:</p>
+<ul>
+<li>Обеспечить нахождение процесса в каждом из состояний.</li>
+<li>Контролировать правильные переходы между состояниями.</li>
+</ul>
+<p><strong>Причины переходов (события):</strong></p>
+<ul>
+<li><p>Инициатива самого процесса (запрос ресурса).</p></li>
+<li><p>Внешние события (прерывания от устройств или таймера).</p></li>
+</ul>
+<h1 id="классификация-процессов">Классификация процессов</h1>
+<p><strong>По времени существования:</strong></p>
+<ul>
+<li><p>Реального времени: Должны завершиться к строго определенному
+моменту.</p></li>
+<li><p>Интерактивные: Время реакции на пользователя должно быть
+минимальным.</p></li>
+<li><p>Пакетные: Обычные задачи, без жестких временных
+ограничений.</p></li>
+</ul>
+<p><strong>По происхождению:</strong></p>
+<ul>
+<li><p>Порождающие: Создающие другие процессы.</p></li>
+<li><p>Порожденные: Созданные другими процессами (дочерние).</p></li>
+</ul>
+<h1 id="классификация-процессов-отношения">Классификация процессов
+(Отношения)</h1>
+<p><strong>По принадлежности кода:</strong></p>
+<ul>
+<li><p>Системные: Исполняют код ядра ОС.</p></li>
+<li><p>Пользовательские: Исполняют код прикладных программ.</p></li>
+</ul>
+<p><strong>По связи друг с другом:</strong></p>
+<ul>
+<li><p>Взаимосвязанные: Обмениваются данными или ресурсами.</p></li>
+<li><p>Изолированные: Не имеют явных связей.</p></li>
+<li><p>Конкурирующие: Борются за одни и те же ресурсы (например, за
+принтер).</p></li>
+</ul>
+<figure>
+<img src="фото3.png" alt="фото3" />
+<figcaption aria-hidden="true">фото3</figcaption>
+</figure>
+<h1 id="правила-сосуществования">Правила сосуществования</h1>
+<ul>
+<li><p><strong>Предшествование</strong>: Процесс А должен строго
+выполняться раньше процесса Б.</p></li>
+<li><p><strong>Приоритетность</strong>: Процесс с высоким приоритетом
+всегда выполняется раньше процесса с низким.</p></li>
+<li><p><strong>Взаимное исключение</strong>: Два процесса не могут
+одновременно работать с одним ресурсом (например, записывать данные в
+один файл). Участки кода, где происходит работа с общим ресурсом,
+называются <strong>критическими областями</strong>.</p></li>
+</ul>
+<h1 id="программные-потоки">Программные потоки</h1>
+<p><strong>Поток</strong> — это “облегченный” процесс, который работает
+внутри другого процесса.</p>
+<ul>
+<li>Отличие: Обычный процесс имеет свое отдельное адресное пространство.
+Потоки одного процесса делят память и ресурсы между собой.</li>
+</ul>
+<h2 id="виды-потоков">Виды потоков</h2>
+<p><strong>Однопоточность</strong>: Программа делает только одно дело за
+раз.</p>
+<p><strong>Многопоточность</strong>: Программа может делать несколько
+дел одновременно (например, браузер загружает страницу и одновременно
+крутит анимацию).</p>
+<figure>
+<img src="фото4.png" alt="фото4" />
+<figcaption aria-hidden="true">фото4</figcaption>
+</figure>
+<h1 id="преимущества-многопоточности-и-итоги">Преимущества
+многопоточности и итоги</h1>
+<p>Зачем нужны потоки ?</p>
+<p><strong>Преимущество многопоточности</strong>:</p>
+<ul>
+<li>Скорость</li>
+<li>Экономия памяти</li>
+<li>Удобство</li>
+</ul>
+<h1 id="заключение">Заключение</h1>
+<ol type="1">
+<li><p>Установлено ключевое различие: программа — это пассивный код на
+диске, а процесс — активный объект, потребляющий ресурсы. Именно это
+превращает статичные файлы в реальную работу компьютера.</p></li>
+<li><p>Деление процессов на виды (системные/пользовательские,
+пакетные/интерактивные) и отношения между ними (приоритетность, взаимное
+исключение) демонстрируют гибкость ОС. Это позволяет ей эффективно
+управлять задачами от фоновых до критичных ко времени.</p></li>
+<li><p>Модель состояний (Создание → Готовность → Исполнение → Ожидание →
+Завершение) объясняет механизм многозадачности. Введение потоков (нитей)
+показывает эволюцию идеи: “облегченные” процессы внутри одной программы
+ускоряют работу и экономят ресурсы.</p></li>
+</ol>
+</body>
+</html>
