@@ -1,67 +1,166 @@
 ---
-## Author
-author:
-  name: Дмитрий Сергеевич Кулябов
-  degrees: DSc
-  orcid: 0000-0002-0877-7063
-  email: kulyabov-ds@rudn.ru
-  affiliation:
-    - name: Российский университет дружбы народов
-      country: Российская Федерация
-      postal-code: 117198
-      city: Москва
-      address: ул. Миклухо-Маклая, д. 6
+## Front matter
+title: "Отчёт по лабораторной работе №5"
+subtitle: "Настройка рабочей среды"
+author: "Юсупова Амина Руслановна"
 
-## Title
-title: "Шаблон отчёта по лабораторной работе"
-subtitle: "Простейший вариант"
-license: "CC BY"
+## Generic otions
+lang: ru-RU
+toc-title: "Содержание"
+
+## Bibliography
+bibliography: bib/cite.bib
+csl: _resources/csl/gost-r-7-0-5-2008-numeric.csl
+
+## Pdf output format
+toc: true # Table of contents
+toc-depth: 2
+lof: true # List of figures
+lot: true # List of tables
+fontsize: 12pt
+linestretch: 1.5
+papersize: a4
+documentclass: scrreprt
+## I18n polyglossia
+polyglossia-lang:
+  name: russian
+  options:
+  - spelling=modern
+  - babelshorthands=true
+polyglossia-otherlangs:
+  name: english
+## I18n babel
+babel-lang: russian
+babel-otherlangs: english
+## Fonts
+mainfont: IBM Plex Serif
+romanfont: IBM Plex Serif
+sansfont: IBM Plex Sans
+monofont: IBM Plex Mono
+mathfont: STIX Two Math
+mainfontoptions: Ligatures=Common,Ligatures=TeX,Scale=0.94
+romanfontoptions: Ligatures=Common,Ligatures=TeX,Scale=0.94
+sansfontoptions: Ligatures=Common,Ligatures=TeX,Scale=MatchLowercase,Scale=0.94
+monofontoptions: Scale=MatchLowercase,Scale=0.94,FakeStretch=0.9
+mathfontoptions: ''
+
+biblatex: true
+biblio-style: "gost-numeric"
+biblatexoptions:
+  - parentracker=true
+  - backend=biber
+  - hyperref=auto
+  - language=auto
+  - autolang=other*
+  - citestyle=gost-numeric
+## Pandoc-crossref LaTeX customization
+figureTitle: "Рис."
+tableTitle: "Таблица"
+listingTitle: "Листинг"
+lofTitle: "Список иллюстраций"
+lotTitle: "Список таблиц"
+lolTitle: "Листинги"
+## Misc options
+indent: true
+header-includes:
+  - \usepackage{indentfirst}
+  - \usepackage{float} # keep figures where there are in the text
+  - \floatplacement{figure}{H} # keep figures where there are in the text
 ---
 
 # Цель работы
 
-Здесь приводится формулировка цели лабораторной работы.
-Формулировки цели для каждой лабораторной работы приведены в методических указаниях.
+Освоить работу с менеджером паролей pass, его синхронизацию через Git, интеграцию с браузером (browserpass), а также изучить возможности chezmoi для управления dotfiles на нескольких машинах.
 
-Цель данного шаблона --- максимально упростить подготовку отчётов по лабораторным работам.
-Модифицируя данный шаблон, студенты смогут без труда подготовить отчёт по лабораторным работам, а также познакомиться с основными возможностями разметки Markdown.
+# Теоретические сведения
 
-# Задание
++ pass – простой менеджер паролей, использующий GPG-шифрование и Git для синхронизации.
 
-Здесь приводится описание задания в соответствии с рекомендациями методического пособия и выданным вариантом.
++ browserpass – расширение для браузера, позволяющее автоматически заполнять логины и пароли из хранилища pass.
 
-# Теоретическое введение
-
-Здесь описываются теоретические аспекты, связанные с выполнением работы.
-
-Например, в [табл. @tbl-std-dir] приведено краткое описание стандартных каталогов Unix.
-
-| Имя каталога | Описание каталога                                                                                                          |
-|--------------|----------------------------------------------------------------------------------------------------------------------------|
-| `/`          | Корневая директория, содержащая всю файловую                                                                               |
-| `/bin `      | Основные системные утилиты, необходимые как в однопользовательском режиме, так и при обычной работе всем пользователям     |
-| `/etc`       | Общесистемные конфигурационные файлы и файлы конфигурации установленных программ                                           |
-| `/home`      | Содержит домашние директории пользователей, которые, в свою очередь, содержат персональные настройки и данные пользователя |
-| `/media`     | Точки монтирования для сменных носителей                                                                                   |
-| `/root`      | Домашняя директория пользователя  `root`                                                                                   |
-| `/tmp`       | Временные файлы                                                                                                            |
-| `/usr`       | Вторичная иерархия для данных пользователя                                                                                 |
-
-: Описание некоторых каталогов файловой системы GNU Linux {#tbl-std-dir}
-
-Более подробно про Unix см. в [@tanenbaum_book_modern-os_ru; @robbins_book_bash_en; @zarrelli_book_mastering-bash_en; @newham_book_learning-bash_en].
++ chezmoi – инструмент для управления dotfiles, позволяющий безопасно хранить и применять конфигурации на разных компьютерах.
 
 # Выполнение лабораторной работы
 
-Описываются проведённые действия, в качестве иллюстрации даётся ссылка на иллюстрацию ([рис. @fig-001]).
+## 1. Установка pass и pass-otp
+Менеджер паролей и расширение для одноразовых паролей установлены через dnf.
+![установка pass и pass-otp](./image/01.png){#fig:001 width=70%}
 
-![V Сольвеевский конгресс (1927) «Электроны и фотоны»](image/solvay.jpg){#fig-001 width=70%}
+## 2. Проверка GPG-ключа
+Для шифрования необходим GPG-ключ. Просмотр существующих ключей подтвердил наличие ключа пользователя (рис. 2).
+
+![проверка gpg-ключа](./image/02.png){#fig:002 width=70%}
+
+## 3. Инициализация хранилища pass
+Хранилище инициализировано с привязкой к email владельца ключа.
+
+![инициализация хранилища pass](./image/03.png){#fig:003 width=70%}
+
+## 4. Создание удалённого репозитория для паролей
+На GitHub создан приватный репозиторий password-store
+
+![создание удалённого репозитория для паролей](./image/04.png){#fig:004 width=70%}
+
+
+## 5. Настройка Git-синхронизации в pass
+В хранилище инициализирован Git, добавлен удалённый репозиторий и выполнена первая синхронизация.
+
+![настройка Git-синхронизации в pass](./image/05.png){#fig:005 width=70%}
+
+![синхронизация](./image/06.png){#fig:006 width=70%}
+
+## 6. Основные операции с паролями
+Добавлен пароль для Social/facebook командой pass insert.
+
+Просмотр пароля: pass Social/facebook.
+
+Замена пароля на сгенерированный: pass generate --in-place Social/facebook.
+
+![операции с паролями](./image/09.png){#fig:007 width=70%}
+
+## 7. Настройка интеграции с браузером (browserpass)
+Установлено расширение для Firefox и пакет browserpass из COPR-репозитория.
+
+![установка расширения](./image/07.png){#fig:008 width=70%}
+
+![установка пакет browserpass](./image/08.png){#fig:009 width=70%}
+
+## 8. Установка шрифтов Iosevka (опционально)
+Подключён репозиторий peterwu/iosevka. Из-за проблем с загрузкой через dnf шрифты установлены вручную: архив скачан с GitHub, файлы ```.ttc``` скопированы в ```~/.local/share/fonts```, кэш обновлён.
+
+![скачивание шрифтов](./image/13.png){#fig:010 width=70%}
+
+## 9. Установка chezmoi
+Скрипт с официального сайта загрузил и установил chezmoi версии 2.70.0
+
+![установка chezmoi](./image/14.png){#fig:011 width=70%}
+
+## 10. Создание репозитория для dotfiles
+С помощью утилиты gh создан приватный репозиторий dotfiles на основе шаблона
+
+![создание репозитория для dotfiles](./image/15.png){#fig:012 width=70%}
+
+## 11. Инициализация chezmoi на основном компьютере
+Репозиторий склонирован и применён (предположительно, добавлены текущие конфигурации). Этот шаг на скриншотах не отображён, но необходим для наполнения репозитория.
+
+## 12. Настройка второго компьютера (имитация)
+Создана директория ```~/second-computer/home```, в которой выполнена инициализация chezmoi с тем же репозиторием. После применения (chezmoi apply) в этой папке появились конфигурационные файлы.
+
+![создание имитации второго компьютера](./image/17.png){#fig:013 width=70%}
+
+##
+
+![инициализация репозитория](./image/18.png){#fig:014 width=70%}
+
+## 
+
+![проверка всех файлов](./image/19.png){#fig:015 width=70%}
 
 # Выводы
 
-Здесь кратко описываются итоги проделанной работы.
-
-# Список литературы{.unnumbered}
-
-::: {#refs}
-:::
+В ходе работы были освоены:
++ установка и настройка pass с шифрованием GPG;
++ синхронизация паролей через Git и GitHub;
++ интеграция с браузером через browserpass;
++ установка шрифтов Iosevka;
++ работа с chezmoi для управления dotfiles, включая создание репозитория и развёртывание конфигурации на втором компьютере.
